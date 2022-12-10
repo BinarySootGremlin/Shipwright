@@ -25,7 +25,7 @@ typedef struct EnSa {
     /* 0x0214 */ s16 leftEyeIndex;
     /* 0x0216 */ s16 mouthIndex;
     /* 0x0218 */ s16 alpha;
-    /* 0x021A */ Vec3s unk_21A;
+    /* 0x021A */ Vec3s initRotation;
     /* 0x0220 */ Vec3s jointTable[17];
     /* 0x0286 */ Vec3s morphTable[17];
 } EnSa; // size = 0x02EC
