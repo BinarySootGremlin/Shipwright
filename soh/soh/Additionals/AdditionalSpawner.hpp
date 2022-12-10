@@ -11,7 +11,7 @@ public:
 	{
 		return instance;
 	}
-	void addActors(PlayState* play, Ship::SceneCommand* cmd);
+	void addActors(PlayState* play, Ship::SceneCommand* cmd, bool cached);
 private:
 	AdditionalSpawner(){};
 	static AdditionalSpawner instance;
