@@ -81,12 +81,13 @@ bool Scene_CommandActorList(PlayState* play, Ship::SceneCommand* cmd) {
 
     play->numSetupActors = cmdActor->entries.size();
 
+    auto& spawner = AdditionalSpawner::Get();
+    spawner.addActors(play, cmd, (cmdActor->cachedGameData != nullptr));
+
     if (cmdActor->cachedGameData != nullptr)
         play->setupActorList = (ActorEntry*)cmdActor->cachedGameData;
     else
     {
-        auto& spawner = AdditionalSpawner::Get();
-        spawner.addActors(play, cmd);
         ActorEntry* entries = (ActorEntry*)malloc(cmdActor->entries.size() * sizeof(ActorEntry));
 
         for (int i = 0; i < cmdActor->entries.size(); i++)
