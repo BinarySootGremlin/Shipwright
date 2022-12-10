@@ -2043,6 +2043,8 @@ extern "C" int CustomMessage_RetrieveIfExists(PlayState* play) {
         messageEntry = CustomMessageManager::Instance->RetrieveMessage(customMessageTableID, TEXT_HEART_PIECE);
         CustomMessageManager::ReplaceStringInMessage(messageEntry, "{{heartPieceCount}}", std::to_string(gSaveContext.sohStats.heartPieces + 1));
     }
+    messageEntry = CustomMessageManager::Instance->RetrieveMessage(customDialogTableId, textId);
+
     if (messageEntry.textBoxType != -1) {
         font->charTexBuf[0] = (messageEntry.textBoxType << 4) | messageEntry.textBoxPos;
         switch (gSaveContext.language) {
@@ -2058,6 +2060,7 @@ extern "C" int CustomMessage_RetrieveIfExists(PlayState* play) {
                            CopyStringToCharBuffer(messageEntry.english, buffer, maxBufferSize);
         }
     }
+
     return false;
 }
 

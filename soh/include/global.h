@@ -9,6 +9,7 @@
 #include "soh/OTRGlobals.h"
 #include "soh/Enhancements/gameconsole.h"
 #include "soh/Enhancements/gameplaystats.h"
+#include "soh/Enhancements/custom-message/CustomDialogTypes.hpp"
 #include <Cvar.h>
 
 #define _AudioseqSegmentRomStart "Audioseq"
